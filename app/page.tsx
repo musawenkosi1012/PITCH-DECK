@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -1071,7 +1070,7 @@ export default function SlideDeck() {
         {/* HERO - with Victoria Falls background */}
         <section id="vision" className="h-screen flex flex-col items-center justify-center text-center px-6 relative z-10">
           <div className="absolute inset-0 z-0 opacity-20 img-fade">
-            <Image src="/heritage/victoria-falls.png" alt="Victoria Falls" fill className="object-cover" priority sizes="100vw" />
+            <img src="/heritage/victoria-falls.png" alt="Victoria Falls" className="w-full h-full object-cover" />
           </div>
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-[var(--charcoal)] via-transparent to-[var(--charcoal)]" />
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 2, ease: "easeOut" }} className="flex flex-col items-center">
@@ -1122,7 +1121,7 @@ export default function SlideDeck() {
         {/* CRISIS - Great Zimbabwe ruins background */}
         <section id="threat" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.18] img-fade">
-            <Image src="/heritage/great-zimbabwe.png" alt="" fill className="object-cover" sizes="100vw" />
+            <img src="/heritage/great-zimbabwe.png" alt="" className="w-full h-full object-cover" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><CoreCrisisSlide /></div>
         </section>
@@ -1130,7 +1129,7 @@ export default function SlideDeck() {
         {/* INFRASTRUCTURE - health-tech command center background */}
         <section id="core" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.18] img-fade">
-            <Image src="/heritage/health-tech-command.png" alt="" fill className="object-cover" sizes="100vw" />
+            <img src="/heritage/health-tech-command.png" alt="" className="w-full h-full object-cover" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><NationalPlatformSlide /></div>
         </section>
@@ -1138,7 +1137,7 @@ export default function SlideDeck() {
         {/* NEURAL CORE - Nyanga mountains background */}
         <section id="neural" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.15] img-fade">
-            <Image src="/heritage/nyanga-mountains.png" alt="" fill className="object-cover" sizes="100vw" />
+            <img src="/heritage/nyanga-mountains.png" alt="" className="w-full h-full object-cover" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><AiLayerSlide /></div>
         </section>
@@ -1146,7 +1145,7 @@ export default function SlideDeck() {
         {/* ROADMAP - Hwange elephants background */}
         <section id="roadmap" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.18] img-fade">
-            <Image src="/heritage/hwange-elephants.png" alt="" fill className="object-cover" sizes="100vw" />
+            <img src="/heritage/hwange-elephants.png" alt="" className="w-full h-full object-cover" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><RoadmapSlide /></div>
         </section>
@@ -1154,7 +1153,7 @@ export default function SlideDeck() {
         {/* INVESTMENT - Victoria Falls background */}
         <section id="capital" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.15] img-fade">
-            <Image src="/heritage/victoria-falls.png" alt="" fill className="object-cover" sizes="100vw" />
+            <img src="/heritage/victoria-falls.png" alt="" className="w-full h-full object-cover" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><InvestmentAskSlide /></div>
         </section>
