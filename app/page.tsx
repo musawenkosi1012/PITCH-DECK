@@ -456,7 +456,7 @@ const AiLayerSlide = () => {
 
 const RoadmapSlide = () => {
   const phases = [
-    { phase: '01', title: 'Clinical Pilot', date: 'Q1 2026', desc: 'Deploy at 5 high-traffic urban hospitals in Harare. Validate EMR integration, wearable data pipeline, and clinical alert accuracy with real patients.', icon: <Building2 />, status: 'Active' },
+    { phase: '01', title: 'Clinical Pilot', date: 'Q1 2027', desc: 'Deploy at 5 high-traffic urban hospitals in Harare. Validate EMR integration, wearable data pipeline, and clinical alert accuracy with real patients.', icon: <Building2 />, status: 'Active' },
     { phase: '02', title: 'Network Expansion', date: 'Q3 2027', desc: 'Secure MoHCC endorsement. Integrate with PSMAS and private insurance systems. Expand to 25 facilities across Harare, Bulawayo, and Mutare.', icon: <Users />, status: 'Planned' },
     { phase: '03', title: 'National Integration', date: '2028', desc: 'Full alignment with the National e-Health Strategy. Deploy population health dashboards for MoHCC. Target 500+ connected facilities nationwide.', icon: <Globe />, status: 'Projected' },
     { phase: '04', title: 'Continental Scale', date: '2029+', desc: 'Export the interoperable health grid model to SADC member states-starting with Zambia, Mozambique, and Malawi through existing MoU frameworks.', icon: <TrendingUp />, status: 'Vision' }
