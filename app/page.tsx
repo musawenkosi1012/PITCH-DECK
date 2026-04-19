@@ -10,7 +10,7 @@ import {
   Activity, Brain, Database, FileText, Globe, LineChart,
   Cpu, Smartphone, ChevronLeft,
   ChevronRight, AlertCircle, TrendingUp, Users, HeartPulse, Building2,
-  Play, Pause, ArrowRight, X, Zap, Instagram, Facebook, Mail
+  Play, Pause, ArrowRight, X, Zap, Instagram, Facebook, Mail, Maximize2, Minimize2
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -981,11 +981,26 @@ const ThreeScene = () => {
 
 export default function SlideDeck() {
   const [showWalkthrough, setShowWalkthrough] = useState(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const toggleFullscreen = async () => {
+    try {
+      if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+        setIsFullscreen(true);
+      } else {
+        await document.exitFullscreen();
+        setIsFullscreen(false);
+      }
+    } catch (err) {
+      console.error('Fullscreen error:', err);
     }
   };
 
@@ -1001,6 +1016,14 @@ export default function SlideDeck() {
         scrollTrigger: { trigger: section, start: "bottom 15%", end: "bottom -5%", scrub: 1.5 }
       });
     });
+  }, []);
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
   return (
@@ -1034,6 +1057,9 @@ export default function SlideDeck() {
         <div className="flex gap-3">
           <button onClick={() => setShowWalkthrough(true)} className="hidden md:flex items-center gap-3 px-8 py-3.5 rounded-full font-black text-xs hover:scale-105 transition-all font-sans shadow-[0_10px_30px_rgba(200,164,78,0.3)]" style={{ background: 'var(--gold)', color: 'var(--charcoal)' }}>
             <Play className="w-3 h-3 fill-current" /> WATCH VISION
+          </button>
+          <button onClick={toggleFullscreen} className="p-3.5 rounded-full border border-white/10 text-white/70 font-black hover:bg-white/5 transition-all" title="Toggle fullscreen">
+            {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
           </button>
           <Link href="/" className="px-8 py-3.5 rounded-full border border-white/10 text-white/70 font-black text-xs hover:bg-white/5 transition-all uppercase tracking-widest font-sans">Exit</Link>
         </div>
