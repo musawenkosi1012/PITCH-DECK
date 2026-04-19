@@ -1033,11 +1033,9 @@ export default function SlideDeck() {
       {/* ─── Persistent Navigation ─── */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[200] flex items-center justify-between w-[95%] max-w-7xl px-10 py-5 glass-heritage rounded-full shadow-[0_20px_60px_rgba(0,0,0,0.5)] opacity-20 hover:opacity-100 transition-all duration-700">
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => scrollToSection('vision')}>
-          <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-[0_0_25px_rgba(200,164,78,0.3)]" style={{ background: 'var(--gold)' }}>
-            <Activity className="w-7 h-7" style={{ color: 'var(--charcoal)' }} />
-          </div>
+          <img src="/favicon.png" alt="E-Chronibook" className="w-12 h-12 rounded-lg" />
           <div>
-            <span className="font-black text-2xl tracking-tighter block leading-none text-white font-sans">E-CHRONIBOOK</span>
+            <span className="font-black text-lg tracking-tighter block leading-none text-white font-sans">E-CHRONIBOOK</span>
             <span className="text-[9px] font-black tracking-[0.6em] uppercase font-sans" style={{ color: 'var(--gold)' }}>National Health Grid</span>
           </div>
         </div>
