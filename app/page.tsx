@@ -1038,7 +1038,7 @@ export default function SlideDeck() {
             <Activity className="w-7 h-7" style={{ color: 'var(--charcoal)' }} />
           </div>
           <div>
-            <span className="font-black text-2xl tracking-tighter block leading-none text-white font-sans">CHRONIBOOK</span>
+            <span className="font-black text-2xl tracking-tighter block leading-none text-white font-sans">E-CHRONIBOOK</span>
             <span className="text-[9px] font-black tracking-[0.6em] uppercase font-sans" style={{ color: 'var(--gold)' }}>National Health Grid</span>
           </div>
         </div>
