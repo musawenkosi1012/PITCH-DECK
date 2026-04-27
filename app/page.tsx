@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import * as THREE from 'three';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,7 +10,7 @@ import {
   Activity, Brain, Database, FileText, Globe, LineChart,
   Cpu, Smartphone, ChevronLeft,
   ChevronRight, AlertCircle, TrendingUp, Users, HeartPulse, Building2,
-  Play, Pause, ArrowRight, X, Zap, Instagram, Facebook, Mail, Maximize2, Minimize2
+  Play, Pause, ArrowRight, X, Zap, Instagram, Facebook, Mail
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -455,7 +456,7 @@ const AiLayerSlide = () => {
 
 const RoadmapSlide = () => {
   const phases = [
-    { phase: '01', title: 'Clinical Pilot', date: 'Q1 2027', desc: 'Deploy at 5 high-traffic urban hospitals in Harare. Validate EMR integration, wearable data pipeline, and clinical alert accuracy with real patients.', icon: <Building2 />, status: 'Active' },
+    { phase: '01', title: 'Clinical Pilot', date: 'Q1 2026', desc: 'Deploy at 5 high-traffic urban hospitals in Harare. Validate EMR integration, wearable data pipeline, and clinical alert accuracy with real patients.', icon: <Building2 />, status: 'Active' },
     { phase: '02', title: 'Network Expansion', date: 'Q3 2027', desc: 'Secure MoHCC endorsement. Integrate with PSMAS and private insurance systems. Expand to 25 facilities across Harare, Bulawayo, and Mutare.', icon: <Users />, status: 'Planned' },
     { phase: '03', title: 'National Integration', date: '2028', desc: 'Full alignment with the National e-Health Strategy. Deploy population health dashboards for MoHCC. Target 500+ connected facilities nationwide.', icon: <Globe />, status: 'Projected' },
     { phase: '04', title: 'Continental Scale', date: '2029+', desc: 'Export the interoperable health grid model to SADC member states-starting with Zambia, Mozambique, and Malawi through existing MoU frameworks.', icon: <TrendingUp />, status: 'Vision' }
@@ -500,36 +501,36 @@ const BreakEvenSlide = () => {
   const scenarios = [
     {
       id: 'conservative',
-      label: 'Conservative',
-      breakEven: 'Month 22',
-      desc: '60% adoption by Month 12, facility licensing at $8k/mo avg'
+      label: 'Proof of Concept',
+      breakEven: 'Month 6',
+      desc: '2-3 hospital pilots, validate AI accuracy, secure MoHCC letter'
     },
     {
       id: 'base',
-      label: 'Base Case',
-      breakEven: 'Month 18',
-      desc: '80% adoption by Month 12, facility licensing at $12k/mo avg'
+      label: 'MVP Launch',
+      breakEven: 'Month 9',
+      desc: 'Expand to 3-5 facilities, first revenue pilots, Series A readiness'
     },
     {
       id: 'optimistic',
-      label: 'Optimistic',
-      breakEven: 'Month 14',
-      desc: '95% adoption by Month 12, facility licensing at $15k/mo + premium SLAs'
+      label: 'Early Revenue',
+      breakEven: 'Month 12',
+      desc: '5+ facilities paying, data pipeline proven, $50k ARR traction'
     }
   ];
 
   const unitEconomics = [
-    { label: 'Cost per Facility (Setup)', value: '$45k', desc: 'EMR deployment, wearables, training' },
-    { label: 'Monthly Recurring', value: '$12k', desc: 'Cloud, support, data delivery' },
-    { label: 'Revenue per Facility', value: '$14-18k/mo', desc: 'Subscription tier, analytics premium' },
-    { label: 'Gross Margin', value: '72%', desc: 'After COGS & cloud infrastructure' }
+    { label: 'Cost per Pilot Facility', value: '$2-3k', desc: 'Wearables, integration, training' },
+    { label: 'Monthly Cloud/Support', value: '$800', desc: 'AWS, database, monitoring' },
+    { label: 'Revenue per Facility', value: '$8-12k/mo', desc: 'Subscription tier (Tier 1-2)' },
+    { label: 'Gross Margin Target', value: '65%', desc: 'Achieved by Month 9' }
   ];
 
   const milestones = [
-    { month: 'Month 6', event: 'Pilot complete at 5 facilities', progress: 25 },
-    { month: 'Month 12', event: 'Expanded to 25 facilities', progress: 50 },
-    { month: 'Month 18', event: 'Break-even achieved', progress: 75 },
-    { month: 'Month 24', event: 'Positive cash flow (Base case)', progress: 100 }
+    { month: 'Month 2', event: 'First 2 hospitals live', progress: 20 },
+    { month: 'Month 4', event: 'AI model validated', progress: 40 },
+    { month: 'Month 6', event: 'MoHCC preliminary endorsement', progress: 60 },
+    { month: 'Month 9', event: 'Series A ready (3-5 facilities)', progress: 100 }
   ];
 
   return (
@@ -629,19 +630,19 @@ const BreakEvenSlide = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="glass-heritage p-10 rounded-[2rem] text-center hover-tilt">
-          <div className="text-5xl font-black font-sans mb-2" style={{ color: 'var(--forest-bright)' }}>$8.4M</div>
-          <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 font-sans">Year 3 Projected Revenue</div>
-          <p className="text-xs text-slate-400 font-sans mt-3">Based on 100+ facility base case</p>
+          <div className="text-5xl font-black font-sans mb-2" style={{ color: 'var(--forest-bright)' }}>$50k</div>
+          <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 font-sans">ARR by Month 12</div>
+          <p className="text-xs text-slate-400 font-sans mt-3">5+ facilities generating revenue</p>
         </div>
         <div className="glass-heritage p-10 rounded-[2rem] text-center hover-tilt">
-          <div className="text-5xl font-black font-sans mb-2" style={{ color: 'var(--gold)' }}>6.5x</div>
-          <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 font-sans">ROI on $2.5M Seed</div>
-          <p className="text-xs text-slate-400 font-sans mt-3">24-month return horizon</p>
+          <div className="text-5xl font-black font-sans mb-2" style={{ color: 'var(--gold)' }}>12-18x</div>
+          <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 font-sans">ROI Path by Year 2</div>
+          <p className="text-xs text-slate-400 font-sans mt-3">Series A round on traction</p>
         </div>
         <div className="glass-heritage p-10 rounded-[2rem] text-center hover-tilt">
-          <div className="text-5xl font-black font-sans mb-2" style={{ color: 'var(--forest-bright)' }}>45%</div>
-          <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 font-sans">EBITDA by Year 2</div>
-          <p className="text-xs text-slate-400 font-sans mt-3">Margin expansion with scale</p>
+          <div className="text-5xl font-black font-sans mb-2" style={{ color: 'var(--forest-bright)' }}>$1.2M</div>
+          <div className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 font-sans">Series A Target</div>
+          <p className="text-xs text-slate-400 font-sans mt-3">To scale to 25-50 facilities</p>
         </div>
       </div>
     </div>
@@ -652,24 +653,24 @@ const InvestmentAskSlide = () => {
   const categories = [
     {
       id: 'software',
-      name: 'Neural Pipeline',
-      amount: '$1.25M',
+      name: 'Product & Infrastructure',
+      amount: '$4.5k',
       icon: <Database />,
-      detail: 'Retaining Zimbabwe\'s top tier-1 engineering talent (competing with $5k/mo remote roles), regional cloud redundancy at Liquid Intelligent Data Centers, and FHIR-compliant EMR integration for 25 facilities.'
+      detail: 'FHIR-compliant EMR integration, cloud hosting (AWS/Vercel), database services, CI/CD pipelines, and 3 months runway for 1-2 founding engineers building the MVP.'
     },
     {
       id: 'ai',
-      name: 'Clinical AI Lab',
-      amount: '$700k',
+      name: 'Clinical Validation',
+      amount: '$3.5k',
       icon: <Brain />,
-      detail: 'Clinical validation studies at Parirenyatwa & Sally Mugabe Hospitals, proprietary training datasets for African biometric markers, and commercial-grade solar power for 24/7 compute uptime.'
+      detail: 'Initial pilot at 2-3 hospitals (Parirenyatwa preferred), wearable sensor testing, AI model validation on real patient data, regulatory/ethics board documentation.'
     },
     {
       id: 'ops',
-      name: 'Grid Deployment',
-      amount: '$550k',
+      name: 'Hardware & Deployment',
+      amount: '$2.5k',
       icon: <Activity />,
-      detail: 'Secure procurement of 5,000 medical telemetry wearables, managing 20-40% import duties & taxes, and field operations for facility-wide solar-backup installs to ensure data continuity during load-shedding.'
+      detail: 'Procure 50-100 medical-grade telemetry wearables, manage import costs, training materials, field setup at pilot hospitals, buffer for unforeseen deployment costs.'
     }
   ];
 
@@ -677,12 +678,12 @@ const InvestmentAskSlide = () => {
     <div className="max-w-7xl mx-auto flex flex-col xl:flex-row gap-16 items-center">
       <div className="flex-1 space-y-12">
         <div className="space-y-5">
-          <div className="text-[10px] font-black uppercase tracking-[0.4em] font-sans" style={{ color: 'var(--gold)' }}>Investment Prospectus v1.0</div>
+          <div className="text-[10px] font-black uppercase tracking-[0.4em] font-sans" style={{ color: 'var(--gold)' }}>Seed Round v1.0</div>
           <h3 className="text-7xl md:text-9xl font-black text-white font-serif italic tracking-tighter leading-none">
-            <PopWords text="$2.5M" className="block" />
-            <span style={{ color: 'var(--gold)' }}><PopWords text="Seed." /></span>
+            <PopWords text="$10-15k" className="block" />
+            <span style={{ color: 'var(--gold)' }}><PopWords text="MVP Proof." /></span>
           </h3>
-          <p className="text-2xl text-slate-400 font-sans max-w-xl italic leading-relaxed">Seeking strategic capital to build and validate Zimbabwe&apos;s first national healthcare telemetry grid.</p>
+          <p className="text-2xl text-slate-400 font-sans max-w-xl italic leading-relaxed">Building a clinical-grade pilot at 2-3 hospitals. Prove the model works. Series A to scale nationally.</p>
         </div>
 
         <div className="space-y-4">
@@ -718,19 +719,19 @@ const InvestmentAskSlide = () => {
             <div className="flex gap-4">
               <div className="w-1.5 h-1.5 rounded-full bg-[var(--gold)] mt-2 shrink-0" />
               <p className="text-slate-300 text-sm font-sans leading-relaxed">
-                <span className="text-white font-black">Talent Retention:</span> We compete for Zimbabwe&apos;s best engineers who earn $4k-$7k/mo in remote US/EU roles. Our Seed preserves a 24-month runway for a tier-1 technical cohort.
+                <span className="text-white font-black">MVP Validation:</span> Prove AI accuracy on live patient data at 2-3 hospitals. Secure MoHCC letter of intent. De-risk clinical and regulatory assumptions before scaling.
               </p>
             </div>
             <div className="flex gap-4">
               <div className="w-1.5 h-1.5 rounded-full bg-red-500 mt-2 shrink-0" />
               <p className="text-slate-300 text-sm font-sans leading-relaxed">
-                <span className="text-white font-black">Harare Logistics:</span> Medical-grade telemetry hardware attracts up to 40% combined duties at ports. We are budgeting for an initial grid of 5,000 active citizen nodes.
+                <span className="text-white font-black">Hardware Validation:</span> Test wearable integration, manage import costs (20-40% duties), validate data quality at scale. Move fast with 50-100 units, not 5,000.
               </p>
             </div>
             <div className="flex gap-4">
               <div className="w-1.5 h-1.5 rounded-full bg-[var(--forest-bright)] mt-2 shrink-0" />
               <p className="text-slate-300 text-sm font-sans leading-relaxed">
-                <span className="text-white font-black">Energy Autonomy:</span> 24/7 monitoring requires decentralized solar backup for every facility to bypass load-shedding and ensure zero clinical data loss.
+                <span className="text-white font-black">Series A Readiness:</span> First revenue pilots at month 9-12. Hit $50k ARR with 5+ paying facilities. Position for $1.2M Series A to scale nationally (25-50 facilities).
               </p>
             </div>
           </div>
@@ -738,12 +739,12 @@ const InvestmentAskSlide = () => {
           <div className="pt-8 border-t border-white/5">
             <div className="grid grid-cols-2 gap-6">
               <div>
-                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 font-sans">Projected IRR</div>
-                <div className="text-2xl font-black text-white font-sans">32%</div>
+                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 font-sans">Path to Series A</div>
+                <div className="text-2xl font-black text-white font-sans">12 Months</div>
               </div>
               <div>
-                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 font-sans">Break-Even</div>
-                <div className="text-2xl font-black text-white font-sans">Month 18</div>
+                <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1 font-sans">MVP Proof Point</div>
+                <div className="text-2xl font-black text-white font-sans">Month 6</div>
               </div>
             </div>
           </div>
@@ -980,26 +981,11 @@ const ThreeScene = () => {
 
 export default function SlideDeck() {
   const [showWalkthrough, setShowWalkthrough] = useState(false);
-  const [isFullscreen, setIsFullscreen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const toggleFullscreen = async () => {
-    try {
-      if (!document.fullscreenElement) {
-        await document.documentElement.requestFullscreen();
-        setIsFullscreen(true);
-      } else {
-        await document.exitFullscreen();
-        setIsFullscreen(false);
-      }
-    } catch (err) {
-      console.error('Fullscreen error:', err);
     }
   };
 
@@ -1017,14 +1003,6 @@ export default function SlideDeck() {
     });
   }, []);
 
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsFullscreen(!!document.fullscreenElement);
-    };
-    document.addEventListener('fullscreenchange', handleFullscreenChange);
-    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
-  }, []);
-
   return (
     <main className="relative min-h-screen overflow-x-hidden selection:bg-[var(--gold)]/30 cursor-default font-sans" style={{ background: 'var(--charcoal)', color: '#e2e8f0' }}>
       <style dangerouslySetInnerHTML={{ __html: designSystem }} />
@@ -1033,9 +1011,11 @@ export default function SlideDeck() {
       {/* ─── Persistent Navigation ─── */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-[200] flex items-center justify-between w-[95%] max-w-7xl px-10 py-5 glass-heritage rounded-full shadow-[0_20px_60px_rgba(0,0,0,0.5)] opacity-20 hover:opacity-100 transition-all duration-700">
         <div className="flex items-center gap-4 cursor-pointer" onClick={() => scrollToSection('vision')}>
-          <img src="/favicon.png" alt="E-Chronibook" className="w-12 h-12 rounded-lg" />
+          <div className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-[0_0_25px_rgba(200,164,78,0.3)]" style={{ background: 'var(--gold)' }}>
+            <Activity className="w-7 h-7" style={{ color: 'var(--charcoal)' }} />
+          </div>
           <div>
-            <span className="font-black text-lg tracking-tighter block leading-none text-white font-sans">E-CHRONIBOOK</span>
+            <span className="font-black text-2xl tracking-tighter block leading-none text-white font-sans">CHRONIBOOK</span>
             <span className="text-[9px] font-black tracking-[0.6em] uppercase font-sans" style={{ color: 'var(--gold)' }}>National Health Grid</span>
           </div>
         </div>
@@ -1055,9 +1035,6 @@ export default function SlideDeck() {
           <button onClick={() => setShowWalkthrough(true)} className="hidden md:flex items-center gap-3 px-8 py-3.5 rounded-full font-black text-xs hover:scale-105 transition-all font-sans shadow-[0_10px_30px_rgba(200,164,78,0.3)]" style={{ background: 'var(--gold)', color: 'var(--charcoal)' }}>
             <Play className="w-3 h-3 fill-current" /> WATCH VISION
           </button>
-          <button onClick={toggleFullscreen} className="p-3.5 rounded-full border border-white/10 text-white/70 font-black hover:bg-white/5 transition-all" title="Toggle fullscreen">
-            {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
-          </button>
           <Link href="/" className="px-8 py-3.5 rounded-full border border-white/10 text-white/70 font-black text-xs hover:bg-white/5 transition-all uppercase tracking-widest font-sans">Exit</Link>
         </div>
       </nav>
@@ -1068,7 +1045,7 @@ export default function SlideDeck() {
         {/* HERO - with Victoria Falls background */}
         <section id="vision" className="h-screen flex flex-col items-center justify-center text-center px-6 relative z-10">
           <div className="absolute inset-0 z-0 opacity-20 img-fade">
-            <img src="/heritage/victoria-falls.png" alt="Victoria Falls" className="w-full h-full object-cover" />
+            <Image src="/heritage/victoria-falls.png" alt="Victoria Falls" fill className="object-cover" priority sizes="100vw" />
           </div>
           <div className="absolute inset-0 z-0 bg-gradient-to-b from-[var(--charcoal)] via-transparent to-[var(--charcoal)]" />
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 2, ease: "easeOut" }} className="flex flex-col items-center">
@@ -1119,7 +1096,7 @@ export default function SlideDeck() {
         {/* CRISIS - Great Zimbabwe ruins background */}
         <section id="threat" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.18] img-fade">
-            <img src="/heritage/great-zimbabwe.png" alt="" className="w-full h-full object-cover" />
+            <Image src="/heritage/great-zimbabwe.png" alt="" fill className="object-cover" sizes="100vw" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><CoreCrisisSlide /></div>
         </section>
@@ -1127,7 +1104,7 @@ export default function SlideDeck() {
         {/* INFRASTRUCTURE - health-tech command center background */}
         <section id="core" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.18] img-fade">
-            <img src="/heritage/health-tech-command.png" alt="" className="w-full h-full object-cover" />
+            <Image src="/heritage/health-tech-command.png" alt="" fill className="object-cover" sizes="100vw" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><NationalPlatformSlide /></div>
         </section>
@@ -1135,7 +1112,7 @@ export default function SlideDeck() {
         {/* NEURAL CORE - Nyanga mountains background */}
         <section id="neural" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.15] img-fade">
-            <img src="/heritage/nyanga-mountains.png" alt="" className="w-full h-full object-cover" />
+            <Image src="/heritage/nyanga-mountains.png" alt="" fill className="object-cover" sizes="100vw" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><AiLayerSlide /></div>
         </section>
@@ -1143,7 +1120,7 @@ export default function SlideDeck() {
         {/* ROADMAP - Hwange elephants background */}
         <section id="roadmap" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.18] img-fade">
-            <img src="/heritage/hwange-elephants.png" alt="" className="w-full h-full object-cover" />
+            <Image src="/heritage/hwange-elephants.png" alt="" fill className="object-cover" sizes="100vw" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><RoadmapSlide /></div>
         </section>
@@ -1151,7 +1128,7 @@ export default function SlideDeck() {
         {/* INVESTMENT - Victoria Falls background */}
         <section id="capital" className="reveal-section min-h-screen flex items-center justify-center p-8 md:p-20 relative z-20">
           <div className="absolute inset-0 z-0 opacity-[0.15] img-fade">
-            <img src="/heritage/victoria-falls.png" alt="" className="w-full h-full object-cover" />
+            <Image src="/heritage/victoria-falls.png" alt="" fill className="object-cover" sizes="100vw" />
           </div>
           <div className="w-full max-w-7xl relative z-10"><InvestmentAskSlide /></div>
         </section>
@@ -1200,3 +1177,4 @@ export default function SlideDeck() {
     </main>
   );
 }
+
