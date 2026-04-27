@@ -1072,11 +1072,10 @@ export default function SlideDeck() {
               Deploying Zimbabwe&apos;s first national AI-powered health telemetry grid for <span className="text-white font-black">Cardiovascular</span>, <span className="text-white font-black">Metabolic</span> &amp; <span className="text-white font-black">Respiratory</span> defense.
             </p>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-4xl glass-heritage p-8 rounded-[2rem] mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 w-full max-w-4xl glass-heritage p-8 rounded-[2rem] mb-16">
               {[
                 { val: "16M", label: "Citizens", color: 'var(--forest-bright)' },
                 { val: "1.2M+", label: "Chronic NCDs", color: '#ef4444' },
-                { val: "$600K", label: "Pre-Seed", color: 'var(--gold)' },
                 { val: "2028", label: "Grid Launch", color: 'var(--parchment)' }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
