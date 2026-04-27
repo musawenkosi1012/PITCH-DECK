@@ -713,7 +713,7 @@ const InvestmentAskSlide = () => {
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[var(--gold)]/30 text-[var(--gold)] text-[9px] font-bold uppercase tracking-widest font-sans">
             Strategic Rationale
           </div>
-          <h4 className="text-3xl font-serif italic font-black text-white">Why $2.5M?</h4>
+          <h4 className="text-3xl font-serif italic font-black text-white">Why $10-15k?</h4>
 
           <div className="space-y-6">
             <div className="flex gap-4">
